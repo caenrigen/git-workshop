@@ -1,0 +1,38 @@
+.right{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+}
+.right a, .right p{
+    text-align: right;
+}
+
+.left{
+    position: fixed;
+    left: 20px;
+    z-index: 100;
+    bottom: 20px;
+}
+
+.twitter a{
+   font-size:60%;
+   height:80px;
+   line-height:80px;
+   vertical-align:middle;
+   display:inline-block;
+}
+
+.logo img{
+    background: red;
+    padding: 0;
+    /*-webkit-box-shadow: 0px 0px 10px #7a7a7a;
+    -moz-box-shadow: 0px 0px 10px #7a7a7a;
+    box-shadow: 0px 0px 10px #7a7a7a;*/
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -khtml-border-radius: 8px;  
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
