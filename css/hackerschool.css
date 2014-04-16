@@ -36,3 +36,7 @@
     height: 80px;
     overflow: hidden;
 }
+
+section[data-background="#6BBA71"] h2, section[data-background="#6BBA71"] p{
+    color: #201F1E;
+}
