@@ -34,84 +34,16 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 <body>
 
 <div class="reveal">
-    <div class="right logo">
-        <img src="imgs/LogotipoB.png"/>
-    </div>
-    <div class="left twitter">
-        <a href="http://twitter.com/HackerSchoolIST">@HackerSchoolIST</a>
-    </div>
-
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
         <section>
-            <h1 style="text-shadow: none; margin-bottom:30px">Git &amp; Github</h1>
-            <h3 style="text-transform: lowercase">like a sir</h3>
+            <h1 style="text-shadow: none; margin-bottom:30px">Git 101</h1>
             <p>
-            <small>Created by <a href="http://diutsu.net">Gonçalo Sousa</a> </br> <a href="http://Github.com/diutsu">Github.com/diutsu</a></small>
+            <small>Adapted for Software Engineering 2016 by <a href="http://fenix.tecnico.ulisboa.pt/homepapge/ist168505">David Duarte</a> </br> <a href="http://github.com/magicknot">github.com/magicknot</a></small>
             </p>
-        </section>
-        <section>
-            <h2>Controlo de versões</h2>
             <p>
-            Controlo de versões (ou de revisões) é a gestão das alterações a documentos, software ou outros tipos de informação.</p>
-            <p>
-            A cada alteração é geralmente atribuido um número ou código, e está associado um timestamp e quem foi a pessoa que a fez.
+            <small>Based on slides by <a href="http://diutsu.net">Gonçalo Sousa</a> </br> <a href="http://github.com/diutsu">github.com/diutsu</a></small>
             </p>
-            <aside class="notes">
-The need for a logical way to organize and control revisions has existed for almost as long as writing has existed, but revision control became much more important, and complicated, when the era of computing began. The numbering of book editions and of specification revisions are examples that date back to the print-only era. Today, the most capable (as well as complex) revision control systems are those used in software development, where a team of people may change the same files.
-
-Version control systems (VCS) most commonly run as stand-alone applications, but revision control is also embedded in various types of software such as word processors and spreadsheets, e.g., Google Docs and Sheets[1] and in various content management systems, e.g., Wikipedia's Page history. Revision control allows for the ability to revert a document to a previous revision, which is critical for allowing editors to track each other's edits, correct mistakes, and defend against vandalism and spam.
-           </aside>
-        </section>
-        <section>
-            <h2>First and Foremost</h2>
-            <p>
-            É extremamente útil usar versionamento para qualquer projecto</br>
-            mesmo que o estejas a fazer sozinho
-            </p>
-            <p style="margin-top:50px" class="fragment roll-in">A Dropbox <strong>NÃO</strong> é um sistema de controlo de versões</p>
-            <p class="fragment roll-in">o histórico de um ficheiro é limitado, e não podes fazer <em>diff</em>'s entre versões</p>
-        </section>
-        <section>
-            <h2>Onde usar controlo de versões?</h2>
-            <p><strong class="fragment">java</strong><strong class="fragment">, matlab</strong><strong class="fragment">, 3D printing</strong><strong class="fragment">, LaTeX...</strong> </br>
-            <p class="fragment">em todos os projectos que trabalhem com ficheiros de texto</p><br/><br/>
-            <p class="fragment">... mas também podem colocar ficheiros binários</p>
-            </p>
-
-            <aside class="notes">
-                Git also supports binary files, and can version them, but the diffs will not work
-            </aside>
-        </section>
-        <section>
-            <h2>Vantagens</h2>
-            <ul>
-                <li class="fragment">backups</li>
-                <li class="fragment">sincronização</li>
-                <li class="fragment">desfazer alterações</li>
-                <li class="fragment">seguir as mudanças</li>
-                <li class="fragment">quem fez o quê</li>
-                <li class="fragment">branches e merges</li>
-                <li class="fragment">ambientes isolados</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Tipos de repositórios</h3>
-        </section>
-        <section>
-            <h2>Repositório Local</h2>
-            <p class="fragment">RCS</p>
-                <img src="http://git-scm.com/figures/18333fig0101-tn.png" alt="rcs">
-        </section>
-        <section>
-            <h2>Um repositório central</h2>
-            <p class="fragment">CVS, SVN</p>
-            <img src="http://git-scm.com/figures/18333fig0102-tn.png" alt="rcs">
-        </section>
-        <section>
-            <h2>Repositórios distribuidos</h2>
-            <p class="fragment">Git, Mercurial</p>
-            <img src="http://git-scm.com/figures/18333fig0103-tn.png" alt="rcs">
         </section>
         <section>
             <h2 style="text-transform: lowercase">git</h3>
@@ -130,113 +62,73 @@ Version control systems (VCS) most commonly run as stand-alone applications, but
             </blockquote>
         </section>
         <section>
-            <h2>Git é melhor do que</h2>
-                <p>Dropbox</p>
-                <p class="fragment">Não é um sistema de controlo de versões</p></br>
-                <p>CVS</p>
-                <p class="fragment">Central Version System. É centralizado</p></br>
-                <p>SVN</p>
-                <p class="fragment">SVN is CVS done right. &ldquo;There is no way to do CVS right&rdquo;</p>
-            <p>
-            <aside class="notes">
-                Git also supports binary files, and can version them, but the diffs will not work
-            </aside>
-        </section>
-        <section>
-                <h2>Primeiro passo: instalar o git</h2>
-            </section>
-            <section>
-                <h2>Debian / Ubuntu</h2>
-                <p>sudo apt-get install git gitk</p>
-            </section>
-            <section>
-                <h2>OS X / Windows</h2>
-                <p class="fragment fade-out">install Linux</p>
-                    <div class="fragment" style="margin-top: -50px">
-                    <p><a  href="http://git-scm.com/downloads/">http://git-scm.com/downloads/</a></p>
-                    <p>OS X podem tentar:</p>
-                    <code data-trim>brew install git</code>
-                </div>
-            </section>
-            <section>
-                <h2>Não há interfaces gráficas?</h2>
-                <div class="fragment">
-                    <p>Há, é só escolher:</p>
-                    <a href="http://git-scm.com/downloads/guis">http://git-scm.com/downloads/guis</a></p>
-                    <p>mas vamos brincar directamente com a CLI</p>
-                </div>
-            </section>
-            <section>
-                <h2>Não posso usar isso num IDE?</h2>
-                <div class="fragment"><p>Claro que sim!<br/>
-                    <a href="https://www.eclipse.org/eGit/">https://www.eclipse.org/eGit/</a><br/>
-                ...</p>
-                </div>
-        </section>
-        <section>
                 <h2>Ready?</h2>
-                <p class="fragment">Criar uma nova pasta "gitWS"</p>
-                <p class="fragment">Abrir um terminal nessa pasta </br>abrir git bash no windows</p>
+                <p class="fragment">In "phonebook" directory</p>
                 <pre class="fragment bash"><code data-trim contenteditable >git init</code></pre>
-                <pre class="fragment result"><code data-trim>Initialized empty Git repository in /home/diutsu/gitWS/.git</code></pre>
+                <pre class="fragment result"><code data-trim>Initialized empty Git repository in /home/diutsu/phonebook/.git</code></pre>
             </section>
             <section data-background="#6BBA71">
                 <h2>ProTip#1</h2>
                 <div class="fragment">
-                    <p>Sempre que quiserem saber o estado do vosso repositório</p>
+                    <p>Anytime you need to get your repository status</p>
                     <pre class="bash"><code data-trim >git status</code></pre>
                 </div>
-                    <pre class="fragment result"><code data-trim ># On branch master
-#
-# Initial commit
-#
-nothing to commit (create/copy files and use "git add" to track)
+                    <pre class="fragment result"><code data-trim >
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    pom.xml
+    src/
+
+nothing added to commit but untracked files present (use "git add" to track)
                     </code></pre>
         </section>
         <section>
-                <h2>Adicionar ficheiros</h2>
-                <div class="fragment"><p>Criar um ficheiro readme.md com</p>
-                <pre class="bash"><code data-trim>#git repository
-## This is my first file on this repository
-I should describe this project here.
-                </code></pre>
+                <h2>Add files </h2>
+                <div class="fragment"><p>Create the .gitignore file</p>
+                <p><a> https://www.gitignore.io/api/java%2Cmaven%2Ceclipse</a></p>
                 </div>
-                    <pre class="fragment bash"><code data-trim >git status</code></pre>
-                    <pre class="fragment bash"><code data-trim>On branch master
-                        
-Initial commit
-                    
-Untracked files:
- (use "git add &lt;file&gt..." to include in what will be committed)
-                   
- readme.md
-                    
-nothing added to commit but untracked files present (use "git add" to track)</code></pre>
-             </section>
-             <section data-background="#6BBA71">
-                 <h2>ProTip#2</h2>
-                 <img style="background:white" src="http://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="git workflow"/>
+         </section>
+         <section data-background="#6BBA71">
+             <h2>ProTip#2</h2>
+             <img style="background:white" src="http://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="git workflow"/>
         </section>
         <section>
-             <h2>Adicionar ficheiros ao repositório</h2>
-             <pre class="fragment bash"><code data-trim >git add readme.md</code></pre>
+             <h2>Add files to the repository</h2>
+             <pre class="fragment bash"><code data-trim >git add .gitignore</code></pre>
              <pre class="fragment bash"><code data-trim>On branch master
 
 Initial commit
-Changes to be committed:
-  (use "Git rm --cached &lt;file&gt;..." to unstage)
 
-    new file:   readme.md
+Changes to be committed:
+(use "git rm --cached &lt;file&gt;..." to unstage)
+
+new file:   .gitignore
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+   pom.xml
+   src/
              </code></pre>
         </section>
         <section>
-            <h2>Fazer commit</h2>
+             <h2>Add (more) files to the <br/>repository</h2>
+             <pre class="fragment bash"><code data-trim >git add .</code></pre>
+        </section>
+        <section>
+            <h2>Commit</h2>
             <pre class="fragment bash"><code data-trim >git commit</code></pre>
-            <p class="fragment">Adiciona a tua mensagem de commit</p>
+            <p class="fragment">Add your commit message</p>
             <pre class="fragment bash"><code data-trim>[master (root-commit) eaee897] My first commit
 1 file changed, 3 insertions(+)
 create mode 100644 readme.
             </code></pre>
+            <p class="fragment"><small>:wq</small></p>
         </section>
         <section data-background="#6BBA71">
             <h2>The über fast way</h2>
@@ -260,18 +152,18 @@ create mode 100644 readme.
                 <h2>So you said Git has good branching ...</h2>
                 <pre class="fragment bash"><code data-trim >git branch alpha
 git checkout alpha </code></pre>
-                <div class="fragment"><p>ou com açúcar</p>
+                <div class="fragment"><p>with syntactic sugar</p>
                     <pre class="bash"><code data-trim >git checkout -b alpha</code></pre></div>
         </section>
         <section>
                 <h2>Changes on new branch</h2>
-                <p>Escrevam uma nova linha no readme.md</p>
+                <p>Write a new line on the readme.md</p>
                 <pre class="bash"><code data-trim >git commit -am "This is a test feature"</code></pre>
         </section>
         <section>
                 <h2>Back to master and merge</h2>
                 <pre class="bash"><code data-trim >git checkout master</code></pre>
-                <p>Vejam que o ficheiro está igual ao que estava antes de mudarem de branch</p>
+                <p>Check that the file is the same as before, you changed the branch</p>
                 <pre class="fragment bash"><code data-trim >git merge alpha</code></pre>
                 <div class="fragment"><pre class="bash"><code data-trim >Updating 452941e..8da4cb8
 Fast-forward
@@ -284,14 +176,14 @@ Fast-forward
                 <h2>Not everything is this smooth</h2>
                 <pre class="fragment bash"><code data-trim >git checkout master</code></pre>
                 <pre class="fragment bash"><code data-trim >vi readme.md</code></pre>
-                <pre class="fragment bash"><code data-trim >Alterem uma linha</code></pre>
+                <pre class="fragment bash"><code data-trim >Change a line</code></pre>
                 <pre class="fragment bash"><code data-trim >git commit -am "There was a bug, temporary fix"</code></pre>
         </section>
         <section>
                 <h2>Not everything goes smoothly</h2>
                 <pre class="fragment bash"><code data-trim >git checkout alpha</code></pre>
                 <pre class="fragment bash"><code data-trim >vi readme.md</code></pre>
-                <pre class="fragment bash"><code data-trim >Alterem a mesma linha, mas para uma coisa diferente</code></pre>
+                <pre class="fragment bash"><code data-trim >Alteram the same line, but differently</code></pre>
 
                 <pre class="fragment bash"><code data-trim >git commit -am "This feature is complete now"</code></pre>
         </section>
@@ -315,186 +207,19 @@ Automatic merge failed; fix conflicts and then commit the result.
                 And so it begun
                 >>>>>>> alpha
                 </code></pre>
-                <p>HEAD é o que está na cabeça do repositório, podem ver isto como o último commit da branch actual</p>
-                <p>A seguir ao separador ====== estão as alterações da branch a que estão a fazer merge</p>
+                <p>HEAD is the repository head, usually the last commit in the current branch</p>
+                <p>After the separator ====== there are the changes in the branch you are merging from</p>
                 <pre class="fragment bash"><code data-trim >git commit -m "merged fix for previous problem"</code></pre>
         </section>
         <section data-background="#6BBA71">
                 <h2>Merge tips</h2>
                 <pre class="bash"><code data-trim >git mergetool</code></pre>
-                <p>opens your a diff editor</p>
+                <p>opens your diff editor</p>
         </section>
         <section>
-            <h1>Tired of this CLI stuff?</h1>
-            <h3>Lets see some pretty interfaces</h3>
+                <h1 style="text-shadow: none; margin-bottom:30px">Good luck ;)</h1>
         </section>
-        <section>
-            <h2>Remotes</h2>
-            <p>Um remote é qualquer repositório que não seja o repositório local em que estás a trabalhar</p>
-            <p>Pode estar no pc do teu colega, Github, ou outro servidor qualquer</p>
-            <p>Pode ainda ser o repositório do projecto upstream para qual estas a contribuir</p>
-            <pre class="fragment bash"><code data-trim >git remote add git@github.com:diutsu/gitWS origin</code></pre>
-            <p class="fragment">O Git permite-te teres vários repositórios remotos ao mesmo tempo</p>
-        </section>
-        <section>
-            <h2>Github</h2>
-            <p>Quem ainda não tiver, criar uma conta.</p>
-            <p class="fragment">Criar um novo repositório, sem adicionar o README</p>
-            <p class="fragment">Vamos adicionar este novo repositório como um remote do que estivemos a trabalhar</p>
-            <pre class="fragment bash"><code data-trim >git remote add origin git@github.com:diutsu/gitWS.git</code></pre>
-            <pre class="fragment bash"><code data-trim >git push -u origin master</code></pre>
-        </section>
-        <section>
-            <h2>Push and Pull</h2>
-            <p>Para demonstar o uso dos pulls vamos usar dois repositórios locais.</br></p>
-            <p>FORA do repositório criem uma nova pasta p.e. sndLocal, dentro dessa pasta</p>
-            <pre class="fragment bash"><code data-trim >git clone git@github.com:diutsu/gitWS.git</code></pre>
-            <p class="fragment">Agora vamos fazer alterações aos ficheiros e fazer commit</p>
-            <pre class="fragment bash"><code data-trim >git commit -am "dude, you had some typos there"</code></pre>
-            <pre class="fragment bash"><code data-trim >git push origin master</code></pre>
-        </section>
-        <section>
-            <h2>Pull and Push</h2>
-            <p>Voltando ao repositório original</p>
-            <pre class="fragment bash"><code data-trim >git pull</code></pre>
-            <p>As alterações são passadas de um repositório para outro</p>
-        </section>
-        <section>
-            <h2>Step it up with branches</h2>
-            <p>Reparem que nas branches do github não está lá a branch alpha</p>
-            <p>Há que fazer push de todas as branches individualmente</p>
-            <pre class="fragment bash"><code data-trim >git push origin alpha</code></pre>
-        </section>
-        <section>
-            <h2>Pull allways get all branches</h2>
-            <p>Voltando ao repositório em sndLocal.</p>
-            <pre class="fragment bash"><code data-trim >git pull</code></pre>
-        </section>
-        <section data-background="#6BBA71">
-            <h2>How many branches are there?</h2>
-            <pre class="bash"><code data-trim >git branch -vv</code></pre>
-        </section>
-        <section>
-            <h2>I feel lonely</h2>
-            <p>Adiciona contribuidores ao teu projecto no github</p>
-            <p>Para projectos em servidores privados, basta que tenhas acesso ao servidor</p>
-            <p>Já agora, é de referir que o git diferencia quem faz o commit e quem faz o push</p>
-        </section>
-        <section>
-            <h2>Students rejoice</h2>
-            <p>5 repositórios privados gratuítos no Github</p>
-            <p><a href="https://education.github.com/">https://education.github.com/</a></p>
-        </section>
-        <section>
-            <h2>Fork but no knife</h2>
-            <p>Github suporta uma maneira bastante fácil de fazer fork a um qualquer reposit' support an easy way to fork any public repository</p>
-            <p>Basta carregares no botão de fork, e ficas com um repositório teu com o código do upstream</p>
-            <p>Terás de fazer o pull do upstream à mão, mas é bastante fácil enviar código de volta ...</p>
-        </section>
-        <section>
-            <h2>Give back, get street cred</h2>
-            <p>Se tiveres feito fork a um repositório, podes a qualquer momento submeter as tuas alterações para serem integradas no upstream</p>
-        </section>
-        <section>
-            <h2>Github has a few treasures</h2>
-            <p>Issues, wiki, github-pages, gists</p>
-        </section>
-        <section>
-            <h2>Adding Files, and bad things</h2>
-            <p>Adicionem um novo ficheiro</p>
-            <pre class="fragment bash"><code data-trim >git commit -a -m "Your commit message"</code></pre>
-            <pre class="fragment bash"><code data-trim >git push</code></pre>
-            <p class="fragment">A few minutes later...</p>
-            <p class="fragment">"Oh Zé não está lá nada!"</p>
-            <pre class="fragment bash"><code data-trim >git status</code></pre>
-            <p class="fragment">Ups e agora?</p>
-        </section>
-        <section>
-            <h2>Change your commit, and why you should not do that</h2>
-            <pre class="fragment bash"><code data-trim >git add newFile.txt</code></pre>
-            <pre class="fragment bash"><code data-trim >git commit --ammend</code></pre>
-            <p class="fragment">This is a new commit, replacing the old one.</p>
-            <pre class="fragment bash"><code data-trim >git push</code></pre>
-            <p class="fragment">DO NOT ammend, or rebase, public code</p>
-            <pre class="fragment bash"><code data-trim >git push -f</code></pre>
-        </section>
-        <section>
-            <h2>Git workflows</h2>
-        </section>
-        <section>
-            <h2>A centralized repository</h2>
-            <p>É o método mais parecido com o SVN</p>
-            <p>O pull é feito sempre com rebase, para manter a história linear</p>
-            <pre class="bash"><code data-trim >git pull --rebase</code></pre>
-            <p>Caso hajam conflitos, resolvem-se, faz-se add e continua-se</p>
-            <pre class="bash"><code data-trim >git rebase --continue</code></pre>
-            <p>ou aborta-se</p>
-            <pre class="bash"><code data-trim >git rebase --abort</code></pre>
-        </section>
-        <section>
-            <h2>A centralized repository</h2>
-            <img src="imgs/centralized.png"/>
-        </section>
-        <section>
-            <h2>Feature branch</h2>
-            <p>Desenvolves cada feature numa branch à parte.</p>
-            <p>Assim que estiver completa, e revista, faz-se merge para a master</p>
-        </section>
-        <section>
-            <h2>Feature branch</h2>
-            <img src="imgs/feature1.png">
-        </section>
-        <section>
-            <h2>Gitflow</h2>
-            <p>Muito parecido ao feature branch</p>
-            <p>Acrescenta algumas branches com significado especial</p>
-            <p><i>master</i> - apenas o código na release oficial,</br>
-            <i>develop</i> - código em desenvolvimento</br>
-            <i>release</i> - em preparação para uma release</br>
-            <i>hotfix</i> - para correcção de bugs na <i>master</i></p>
-        </section>
-        <section>
-            <h2>Gitflow</h2>
-            <img src="imgs/gitflow.png"/>
-        </section>
-        <section>
-            <h2>Pull Request</h2>
-            <p>É um dos métodos mais comuns no github</p>
-            <p>Cada utilizador tem um repositório remoto</p>
-            <p>O desenvolvimento é feito para esse repositório</p>
-            <p>Assim que tiverem o seu trabalho completo criam um pull request</p>
-        </section>
-        <section>
-            <h2>Pull Request</h2>
-            <img src="imgs/pullrequest.png">
-        </section>
-        <section>
-            <h2>All your bases are belong to us</h2>
-            <p>Lets use another repo, that has already a few commits</p>
-            <pre class="fragment bash"><code data-trim >git clone git@github.com:{your github username]/gitWSPart2.git </code></pre>
-            <div class="fragment"><pre class="bash"><code data-trim >git log --graph --oneline --all</code></pre>
-                <p> ou</p>
-            <pre class="fragment bash"><code data-trim >gitk --all </code></pre>
-            </div>
-        </section>
-        <section>
-            <h2>This repo is a mess</h2>
-            <p>No not really. This is normal</br>We just have to merge a few branches</p>
-        </section>
-        <section  data-background="#883333">
-            <h2>What about rebase?</h2>
-            <p>NO. The code is already public.</p>
-            </section>
-            <section>
-            <h2>But what if?</h2>
-            <p>unscripted git hacking</p>
-        </section>
-        <section>
-            <h1>F I M</h1>
-            <p>Reve os slides aqui: <a href="http://diutsu.net/git">diutsu.net/git</a> ou faz clone e fork do repositório</p>
-            <a href="http://github.com/diutsu/git-workshop"><pre class="bash"><code data-trim>git clone https://github.com/diutsu/git-workshop</code></pre></a>
-            <small class="fragment grow">made with git, reveal.js and ViM</small>
-        </section>
+
     </div>
 
 </div>
