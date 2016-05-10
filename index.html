@@ -1,36 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<head>
-<meta charset="utf-8">
+        <title>reveal.js</title>
 
-<title>Git - a workshop by HackerSchool IST</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
 
-<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-<meta name="author" content="Gonçalo Sousa">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<link rel="stylesheet" href="css/reveal.min.css">
-<link rel="stylesheet" href="css/theme/night.css" id="theme">
-
-<!-- For syntax highlighting -->
-<link rel="stylesheet" href="lib/css/zenburn.css">
-
-<link rel="stylesheet" href="css/hackerschool.css">
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<script>
-document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-</script>
-
-<!--[if lt IE 9]>
-        <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
-</head>
-
+        <link rel="stylesheet" href="css/hackerschool.css">
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
 <body>
 
 <div class="reveal">
@@ -51,69 +42,6 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
             </p>
         </section>
         <section>
-            <h2>Controlo de versões</h2>
-            <p>
-            Controlo de versões (ou de revisões) é a gestão das alterações a documentos, software ou outros tipos de informação.</p>
-            <p>
-            A cada alteração é geralmente atribuido um número ou código, e está associado um timestamp e quem foi a pessoa que a fez.
-            </p>
-            <aside class="notes">
-The need for a logical way to organize and control revisions has existed for almost as long as writing has existed, but revision control became much more important, and complicated, when the era of computing began. The numbering of book editions and of specification revisions are examples that date back to the print-only era. Today, the most capable (as well as complex) revision control systems are those used in software development, where a team of people may change the same files.
-
-Version control systems (VCS) most commonly run as stand-alone applications, but revision control is also embedded in various types of software such as word processors and spreadsheets, e.g., Google Docs and Sheets[1] and in various content management systems, e.g., Wikipedia's Page history. Revision control allows for the ability to revert a document to a previous revision, which is critical for allowing editors to track each other's edits, correct mistakes, and defend against vandalism and spam.
-           </aside>
-        </section>
-        <section>
-            <h2>First and Foremost</h2>
-            <p>
-            É extremamente útil usar versionamento para qualquer projecto</br>
-            mesmo que o estejas a fazer sozinho
-            </p>
-            <p style="margin-top:50px" class="fragment roll-in">A Dropbox <strong>NÃO</strong> é um sistema de controlo de versões</p>
-            <p class="fragment roll-in">o histórico de um ficheiro é limitado, e não podes fazer <em>diff</em>'s entre versões</p>
-        </section>
-        <section>
-            <h2>Onde usar controlo de versões?</h2>
-            <p><strong class="fragment">java</strong><strong class="fragment">, matlab</strong><strong class="fragment">, 3D printing</strong><strong class="fragment">, LaTeX...</strong> </br>
-            <p class="fragment">em todos os projectos que trabalhem com ficheiros de texto</p><br/><br/>
-            <p class="fragment">... mas também podem colocar ficheiros binários</p>
-            </p>
-
-            <aside class="notes">
-                Git also supports binary files, and can version them, but the diffs will not work
-            </aside>
-        </section>
-        <section>
-            <h2>Vantagens</h2>
-            <ul>
-                <li class="fragment">backups</li>
-                <li class="fragment">sincronização</li>
-                <li class="fragment">desfazer alterações</li>
-                <li class="fragment">seguir as mudanças</li>
-                <li class="fragment">quem fez o quê</li>
-                <li class="fragment">branches e merges</li>
-                <li class="fragment">ambientes isolados</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Tipos de repositórios</h3>
-        </section>
-        <section>
-            <h2>Repositório Local</h2>
-            <p class="fragment">RCS</p>
-                <img src="http://git-scm.com/figures/18333fig0101-tn.png" alt="rcs">
-        </section>
-        <section>
-            <h2>Um repositório central</h2>
-            <p class="fragment">CVS, SVN</p>
-            <img src="http://git-scm.com/figures/18333fig0102-tn.png" alt="rcs">
-        </section>
-        <section>
-            <h2>Repositórios distribuidos</h2>
-            <p class="fragment">Git, Mercurial</p>
-            <img src="http://git-scm.com/figures/18333fig0103-tn.png" alt="rcs">
-        </section>
-        <section>
             <h2 style="text-transform: lowercase">git</h3>
             <blockquote cite="http://git-scm.com">
                 &ldquo;Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.&rdquo;
@@ -130,24 +58,82 @@ Version control systems (VCS) most commonly run as stand-alone applications, but
             </blockquote>
         </section>
         <section>
-            <h2>Git é melhor do que</h2>
-                <p>Dropbox</p>
-                <p class="fragment">Não é um sistema de controlo de versões</p></br>
-                <p>CVS</p>
-                <p class="fragment">Central Version System. É centralizado</p></br>
-                <p>SVN</p>
-                <p class="fragment">SVN is CVS done right. &ldquo;There is no way to do CVS right&rdquo;</p>
+            <h2>Controlo de versões</h2>
             <p>
+            Gestão das alterações a documentos, código ou outros tipos de informação.</p>
+            <p>
+            Identificadas por número ou código, e associado um timestamp e responsável.
+            </p>
+            <aside class="notes">
+The need for a logical way to organize and control revisions has existed for almost as long as writing has existed, but revision control became much more important, and complicated, when the era of computing began. The numbering of book editions and of specification revisions are examples that date back to the print-only era. Today, the most capable (as well as complex) revision control systems are those used in software development, where a team of people may change the same files.
+
+Version control systems (VCS) most commonly run as stand-alone applications, but revision control is also embedded in various types of software such as word processors and spreadsheets, e.g., Google Docs and Sheets[1] and in various content management systems, e.g., Wikipedia's Page history. Revision control allows for the ability to revert a document to a previous revision, which is critical for allowing editors to track each other's edits, correct mistakes, and defend against vandalism and spam.
+           </aside>
+        </section>
+        <section>
+            <h2>First and Foremost</h2>
+            <p>
+            Usar em todos os projectos</br>
+            </br>mesmo que o estejas a fazer sozinho
+            </p>
+        </section>
+        <section>
+            <h2>O que meter no git?</h2>
+            <p><strong class="fragment">java</strong><strong class="fragment">, matlab</strong><strong class="fragment">, 3D printing</strong><strong class="fragment">, LaTeX...</strong> </br>
+            <p class="fragment">em todos os projectos que trabalhem com ficheiros de texto</p><br/><br/>
+            <p class="fragment">... mas também podem colocar ficheiros binários</p>
+            </p>
+
             <aside class="notes">
                 Git also supports binary files, and can version them, but the diffs will not work
             </aside>
         </section>
         <section>
-                <h2>Primeiro passo: instalar o git</h2>
+            <h2>Vantagens</h2>
+            <ul>
+                <li>backups</li>
+                <li>sincronização</li>
+                <li>desfazer alterações</li>
+                <li>seguir as mudanças</li>
+                <li>quem fez o quê</li>
+                <li>branches e merges</li>
+                <li>ambientes isolados</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Repositórios de Git</h2>
+            <img height="500px" src="http://git-scm.com/figures/18333fig0103-tn.png" alt="rcs">
+        </section>
+        <section>
+            <h2>Primeiro passo: instalar o git</h2>
+            <section>
+                <pre><code data-trim>
+# Debian/Ubuntu
+apt-get install git-all
+                </code></pre>
             </section>
             <section>
-                <h2>Debian / Ubuntu</h2>
-                <p>sudo apt-get install git gitk</p>
+                <pre><code data-trim>
+# Debian/Ubuntu
+apt-get install git-all
+#ArchLinux
+pacman -S git gitk
+#Gentoo
+emerge --ask --verbose dev-vcs/git
+# Fedora 21 / Red-hat
+yum install git-all
+# Fedora 22+
+dnf install git
+#openSuse
+zypper install git
+#FreeBSD
+cd /usr/ports/devel/git
+make install
+#Solaris 11 Express
+pkg install developer/versioning/git
+#OpenBSD
+pkg_add git
+                </code></pre>
             </section>
             <section>
                 <h2>OS X / Windows</h2>
@@ -158,20 +144,21 @@ Version control systems (VCS) most commonly run as stand-alone applications, but
                     <code data-trim>brew install git</code>
                 </div>
             </section>
-            <section>
-                <h2>Não há interfaces gráficas?</h2>
-                <div class="fragment">
-                    <p>Há, é só escolher:</p>
-                    <a href="http://git-scm.com/downloads/guis">http://git-scm.com/downloads/guis</a></p>
-                    <p>mas vamos brincar directamente com a CLI</p>
-                </div>
-            </section>
-            <section>
-                <h2>Não posso usar isso num IDE?</h2>
-                <div class="fragment"><p>Claro que sim!<br/>
-                    <a href="https://www.eclipse.org/eGit/">https://www.eclipse.org/eGit/</a><br/>
-                ...</p>
-                </div>
+        </section>
+        <section>
+            <h2>Não há interfaces gráficas?</h2>
+            <div class="fragment">
+                <p>Há, é só escolher:</p>
+                <a href="http://git-scm.com/downloads/guis">http://git-scm.com/downloads/guis</a></p>
+                <p>mas vamos brincar directamente com a CLI</p>
+            </div>
+        </section>
+        <section>
+            <h2>Não posso usar isso num IDE?</h2>
+            <div class="fragment"><p>Claro que sim!<br/>
+                <a href="https://www.eclipse.org/eGit/">https://www.eclipse.org/eGit/</a><br/>
+            ...</p>
+            </div>
         </section>
         <section>
                 <h2>Ready?</h2>
@@ -203,14 +190,14 @@ I should describe this project here.
                 </div>
                     <pre class="fragment bash"><code data-trim >git status</code></pre>
                     <pre class="fragment bash"><code data-trim>On branch master
-                        
+
 Initial commit
-                    
+
 Untracked files:
  (use "git add &lt;file&gt..." to include in what will be committed)
-                   
+
  readme.md
-                    
+
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
              </section>
              <section data-background="#6BBA71">
@@ -493,44 +480,37 @@ Automatic merge failed; fix conflicts and then commit the result.
             <h1>F I M</h1>
             <p>Reve os slides aqui: <a href="http://diutsu.net/git">diutsu.net/git</a> ou faz clone e fork do repositório</p>
             <a href="http://github.com/diutsu/git-workshop"><pre class="bash"><code data-trim>git clone https://github.com/diutsu/git-workshop</code></pre></a>
-            <small class="fragment grow">made with git, reveal.js and ViM</small>
-        </section>
-    </div>
+                <small class="fragment grow">made with git, reveal.js and ViM</small>
+                </section>
+            </div>
 
-</div>
+        </div>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.min.js"></script>
 
-<script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-// Full list of configuration options available here:
-// https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-controls: false,
-progress: true,
-history: true,
-center: true,
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
-// Parallax scrolling
-//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-2.jpg',
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
 
-//parallaxBackgroundSize: '2500px 1080px',
+            });
 
-// Optional libraries used to extend on reveal.js
-dependencies: [
-{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-]
-});
+        </script>
 
-</script>
-
-</body>
+    </body>
 </html>
