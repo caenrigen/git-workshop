@@ -7,7 +7,7 @@
         <title>reveal.js</title>
 
         <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/theme/night.css" id="theme">
 
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -116,64 +116,85 @@ apt-get install git-all
                 <pre><code data-trim>
 # Debian/Ubuntu
 apt-get install git-all
-#ArchLinux
+# ArchLinux
 pacman -S git gitk
-#Gentoo
+# Gentoo
 emerge --ask --verbose dev-vcs/git
 # Fedora 21 / Red-hat
 yum install git-all
 # Fedora 22+
 dnf install git
-#openSuse
+# OpenSUSE
 zypper install git
-#FreeBSD
+# FreeBSD
 cd /usr/ports/devel/git
 make install
-#Solaris 11 Express
+# Solaris 11 Express
 pkg install developer/versioning/git
-#OpenBSD
+# OpenBSD
 pkg_add git
                 </code></pre>
             </section>
             <section>
                 <h2>OS X / Windows</h2>
                 <p class="fragment fade-out">install Linux</p>
-                    <div class="fragment" style="margin-top: -50px">
-                    <p><a  href="http://git-scm.com/downloads/">http://git-scm.com/downloads/</a></p>
-                    <p>OS X podem tentar:</p>
-                    <code data-trim>brew install git</code>
+                <div class="fragment" style="margin-top: -2em">
+                    <p><a href="http://git-scm.com/downloads/">http://git-scm.com/downloads/</a></p>
+                    <br/>
+                    <h4>OS X via brew</h4>
+                    <pre><code data-trim>brew install git</code></pre>
                 </div>
             </section>
         </section>
         <section>
-            <h2>Não há interfaces gráficas?</h2>
-            <div class="fragment">
+            <section>
+                <h2>Não há interfaces gráficas?</h2>
+                <div class="fragment">
+                    <p>Para quê?</p>
+                    <img src="imgs/lsd.png" />
+                </div>
+            </section>
+            <section>
+                <h2>Não há interfaces gráficas?</h2>
                 <p>Há, é só escolher:</p>
                 <a href="http://git-scm.com/downloads/guis">http://git-scm.com/downloads/guis</a></p>
-                <p>mas vamos brincar directamente com a CLI</p>
-            </div>
+                <p>Pessoalmente CLI + gitk + meld</p>
+            </section>
+            <section>
+                <h2>SourceTree</>
+                <img src="imgs/sourceTree.png" />
+            </section>
+            <section>
+                <h2>GitKraken</>
+                <img src="imgs/gitkraken.png" />
+            </section>
         </section>
         <section>
             <h2>Não posso usar isso num IDE?</h2>
             <div class="fragment"><p>Claro que sim!<br/>
                 <a href="https://www.eclipse.org/eGit/">https://www.eclipse.org/eGit/</a><br/>
+                <a href="https://sublimegit.net/">https://sublimegit.net/</a><br/>
             ...</p>
             </div>
         </section>
         <section>
                 <h2>Ready?</h2>
-                <p class="fragment">Criar uma nova pasta "gitWS"</p>
-                <p class="fragment">Abrir um terminal nessa pasta </br>abrir git bash no windows</p>
-                <pre class="fragment bash"><code data-trim contenteditable >git init</code></pre>
-                <pre class="fragment result"><code data-trim>Initialized empty Git repository in /home/diutsu/gitWS/.git</code></pre>
-            </section>
-            <section data-background="#6BBA71">
-                <h2>ProTip#1</h2>
-                <div class="fragment">
-                    <p>Sempre que quiserem saber o estado do vosso repositório</p>
-                    <pre class="bash"><code data-trim >git status</code></pre>
-                </div>
-                    <pre class="fragment result"><code data-trim ># On branch master
+                <h3>Usar git</h3>
+        </section>
+        <section>
+            <h2>Criar um repositório</h2>
+            <p >Criar uma nova pasta "gitWS"</p>
+            <p >Abrir a pasta num terminal<br/>git bash no Windows</p>
+            <pre class="fragment bash"><code data-trim contenteditable >git init</code></pre>
+            <pre class="fragment bash"><code data-trim>Initialized empty Git repository in /home/diutsu/gitWS/.git</code></pre>
+        </section>
+        <section data-background="#6BBA71">
+            <h2>ProTip#1</h2>
+            <div class="fragment">
+                <p>Sempre que quiserem saber o estado do vosso repositório</p>
+                <pre class="bash"><code data-trim >git status</code></pre>
+            </div>
+                <pre class="fragment result"><code class="bash" data-trim ># On branch master
 #
 # Initial commit
 #
@@ -202,7 +223,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
              </section>
              <section data-background="#6BBA71">
                  <h2>ProTip#2</h2>
-                 <img style="background:white" src="http://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="git workflow"/>
+                 <img style="border:white solid 10px;background:white" src="http://git-scm.com/book/en/v2/book/02-git-basics/images/lifecycle.png" alt="git workflow"/>
         </section>
         <section>
              <h2>Adicionar ficheiros ao repositório</h2>
@@ -211,7 +232,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
 
 Initial commit
 Changes to be committed:
-  (use "Git rm --cached &lt;file&gt;..." to unstage)
+  (use "git rm --cached &lt;file&gt;..." to unstage)
 
     new file:   readme.md
              </code></pre>
@@ -316,13 +337,25 @@ Automatic merge failed; fix conflicts and then commit the result.
             <h3>Lets see some pretty interfaces</h3>
         </section>
         <section>
-            <h2>Remotes</h2>
-            <p>Um remote é qualquer repositório que não seja o repositório local em que estás a trabalhar</p>
-            <p>Pode estar no pc do teu colega, Github, ou outro servidor qualquer</p>
-            <p>Pode ainda ser o repositório do projecto upstream para qual estas a contribuir</p>
-            <pre class="fragment bash"><code data-trim >git remote add git@github.com:diutsu/gitWS origin</code></pre>
-            <p class="fragment">O Git permite-te teres vários repositórios remotos ao mesmo tempo</p>
+            <h2>SourceTree</h2>
+            <h3>Live merging demo</h3>
+            <img class="logo" src="imgs/sourcetree-logo.png"/>
         </section>
+        <section>
+            <h2>Remotes</h2>
+            <p>É um repositório noutro pc</p>
+            <p>Pode estar no pc do teu colega, Github, ou outro servidor</p>
+            <p>Repositório do projecto para que estás a contribuir - <i>upstream</i></p>
+            <p>Podes ter vários remotes simultaneamente</p>
+        </section>
+        <section>
+            <h3>Remotes</h3>
+            <img src="imgs/remotes.png"/>
+        </section>
+            <section>
+                <h2>Github</h2>
+                <img src="imgs/github.png" />
+            </section>
         <section>
             <h2>Github</h2>
             <p>Quem ainda não tiver, criar uma conta.</p>
@@ -429,7 +462,7 @@ Automatic merge failed; fix conflicts and then commit the result.
         </section>
         <section>
             <h2>Feature branch</h2>
-            <img src="imgs/feature1.png">
+            </sectionimg src="imgs/feature1.png">
         </section>
         <section>
             <h2>Gitflow</h2>

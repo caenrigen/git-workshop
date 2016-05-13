@@ -37,6 +37,12 @@
     overflow: hidden;
 }
 
+.reveal section img {
+    border:none;
+    background:transparent;
+    box-shadow:none;
+}
+
 section[data-background="#6BBA71"] h2, section[data-background="#6BBA71"] p{
     color: #201F1E;
 }
