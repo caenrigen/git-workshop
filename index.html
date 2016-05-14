@@ -80,7 +80,7 @@ Version control systems (VCS) most commonly run as stand-alone applications, but
         <section>
             <h2>O que meter no git?</h2>
             <p><strong class="fragment">java</strong><strong class="fragment">, matlab</strong><strong class="fragment">, 3D printing</strong><strong class="fragment">, LaTeX...</strong> </br>
-            <p class="fragment">em todos os projectos que trabalhem com ficheiros de texto</p><br/><br/>
+            <p class="fragment">e todos os ficheiros de texto dos vossso projectos</p><br/><br/>
             <p class="fragment">... mas também podem colocar ficheiros binários</p>
             </p>
 
@@ -179,7 +179,7 @@ pkg_add git
         </section>
         <section>
                 <h2>Ready?</h2>
-                <h3>Usar git</h3>
+                <h3>Usando git</h3>
         </section>
         <section>
             <h2>Criar um repositório</h2>
@@ -271,6 +271,10 @@ git checkout alpha </code></pre>
                 <div class="fragment"><p>ou com açúcar</p>
                     <pre class="bash"><code data-trim >git checkout -b alpha</code></pre></div>
         </section>
+        <section data-background="#6BBA71">
+            <h2>How many branches are there?</h2>
+            <pre class="bash"><code data-trim >git branch -vv</code></pre>
+        </section>
         <section>
                 <h2>Changes on new branch</h2>
                 <p>Escrevam uma nova linha no readme.md</p>
@@ -291,16 +295,13 @@ Fast-forward
         <section>
                 <h2>Not everything is this smooth</h2>
                 <pre class="fragment bash"><code data-trim >git checkout master</code></pre>
-                <pre class="fragment bash"><code data-trim >vi readme.md</code></pre>
-                <pre class="fragment bash"><code data-trim >Alterem uma linha</code></pre>
+                <p class="fragment">Alterem uma linha no readme</p>
                 <pre class="fragment bash"><code data-trim >git commit -am "There was a bug, temporary fix"</code></pre>
         </section>
         <section>
                 <h2>Not everything goes smoothly</h2>
                 <pre class="fragment bash"><code data-trim >git checkout alpha</code></pre>
-                <pre class="fragment bash"><code data-trim >vi readme.md</code></pre>
-                <pre class="fragment bash"><code data-trim >Alterem a mesma linha, mas para uma coisa diferente</code></pre>
-
+                <p class="fragment">Alterem a mesma linha do readme, para outra coisa</p>
                 <pre class="fragment bash"><code data-trim >git commit -am "This feature is complete now"</code></pre>
         </section>
         <section>
@@ -323,14 +324,14 @@ Automatic merge failed; fix conflicts and then commit the result.
                 And so it begun
                 >>>>>>> alpha
                 </code></pre>
-                <p>HEAD é o que está na cabeça do repositório, podem ver isto como o último commit da branch actual</p>
-                <p>A seguir ao separador ====== estão as alterações da branch a que estão a fazer merge</p>
+                <p>HEAD é um alias para o commit/branch actual</p>
+                <p>Depois do  "======" estão as alterações a que estão fazer merge</p>
                 <pre class="fragment bash"><code data-trim >git commit -m "merged fix for previous problem"</code></pre>
         </section>
         <section data-background="#6BBA71">
                 <h2>Merge tips</h2>
                 <pre class="bash"><code data-trim >git mergetool</code></pre>
-                <p>opens your a diff editor</p>
+                <p>opens your prefered diff editor</p>
         </section>
         <section>
             <h1>Tired of this CLI stuff?</h1>
@@ -359,61 +360,62 @@ Automatic merge failed; fix conflicts and then commit the result.
         <section>
             <h2>Github</h2>
             <p>Quem ainda não tiver, criar uma conta.</p>
-            <p class="fragment">Criar um novo repositório, sem adicionar o README</p>
-            <p class="fragment">Vamos adicionar este novo repositório como um remote do que estivemos a trabalhar</p>
+            <p class="fragment">Criar um novo repositório, vazio</p>
+            <p class="fragment">Adicionar este remote ao nosso repositório</p>
             <pre class="fragment bash"><code data-trim >git remote add origin git@github.com:diutsu/gitWS.git</code></pre>
             <pre class="fragment bash"><code data-trim >git push -u origin master</code></pre>
         </section>
         <section>
-            <h2>Push and Pull</h2>
-            <p>Para demonstar o uso dos pulls vamos usar dois repositórios locais.</br></p>
-            <p>FORA do repositório criem uma nova pasta p.e. sndLocal, dentro dessa pasta</p>
-            <pre class="fragment bash"><code data-trim >git clone git@github.com:diutsu/gitWS.git</code></pre>
-            <p class="fragment">Agora vamos fazer alterações aos ficheiros e fazer commit</p>
-            <pre class="fragment bash"><code data-trim >git commit -am "dude, you had some typos there"</code></pre>
-            <pre class="fragment bash"><code data-trim >git push origin master</code></pre>
-        </section>
-        <section>
-            <h2>Pull and Push</h2>
-            <p>Voltando ao repositório original</p>
-            <pre class="fragment bash"><code data-trim >git pull</code></pre>
-            <p>As alterações são passadas de um repositório para outro</p>
-        </section>
-        <section>
-            <h2>Step it up with branches</h2>
+            <h2>Branches</h2>
             <p>Reparem que nas branches do github não está lá a branch alpha</p>
             <p>Há que fazer push de todas as branches individualmente</p>
             <pre class="fragment bash"><code data-trim >git push origin alpha</code></pre>
         </section>
-        <section>
+        <section data-background="#6BBA71">
             <h2>Pull allways get all branches</h2>
-            <p>Voltando ao repositório em sndLocal.</p>
             <pre class="fragment bash"><code data-trim >git pull</code></pre>
         </section>
-        <section data-background="#6BBA71">
-            <h2>How many branches are there?</h2>
-            <pre class="bash"><code data-trim >git branch -vv</code></pre>
+        <section>
+            <h2>Forks</h2>
+            <p>Cópias de outros repositórios</p>
+            <p>Parte do esquema de <i>pull-request</i> do github</p>
+            <p>Remote para os repositórios do vosso PC</p>
+            <a href="http://github.com/diutsu/Qt-Calculator">http://github.com/diutsu/Qt-Calculator</a>
+        </section>
+        <section>
+            <h2>Give back, get street cred</h2>
+            <p>Podes submeter as tuas alterações para o upstream</p>
+            <p><i>Pull request</i></p>
+        </section>
+        <section>
+            <h2>Pull Request</h2>
+            <p>É o workflow standard para o  github</p>
+            <p>Cada contribuidor tem um fork do repositório</p>
+            <p>Desenvolvem contra o seu repositório</p>
+            <p>Assim que tiverem a tarefa completa criam um pull request</p>
+        </section>
+        <section>
+            <h2>Pull Request</h2>
+            <img src="imgs/pullrequest.png">
+        </section>
+        <section>
+            <h2>Update your fork</h2>
+            <pre class="fragment bash"><code data-trim >git remote add upstream git@github.com:diutsu/Qt-Calculator.git</code></pre>
+            <pre class="fragment bash"><code data-trim >git fetch upstream</code></pre>
+            <pre class="fragment bash"><code data-trim >git checkout master</code></pre>
+            <pre class="fragment bash"><code data-trim >git merge upstream/master</code></pre>
+            <pre class="fragment bash"><code data-trim >git push origin</code></pre>
         </section>
         <section>
             <h2>I feel lonely</h2>
             <p>Adiciona contribuidores ao teu projecto no github</p>
             <p>Para projectos em servidores privados, basta que tenhas acesso ao servidor</p>
-            <p>Já agora, é de referir que o git diferencia quem faz o commit e quem faz o push</p>
+            <p>Já agora, é de referir que o git diferencia quem faz o commit e quem faz o push/merge</p>
         </section>
         <section>
             <h2>Students rejoice</h2>
-            <p>5 repositórios privados gratuítos no Github</p>
+            <p>repositórios privados <b>ilimitados</b> gratuítos no Github</p>
             <p><a href="https://education.github.com/">https://education.github.com/</a></p>
-        </section>
-        <section>
-            <h2>Fork but no knife</h2>
-            <p>Github suporta uma maneira bastante fácil de fazer fork a um qualquer reposit' support an easy way to fork any public repository</p>
-            <p>Basta carregares no botão de fork, e ficas com um repositório teu com o código do upstream</p>
-            <p>Terás de fazer o pull do upstream à mão, mas é bastante fácil enviar código de volta ...</p>
-        </section>
-        <section>
-            <h2>Give back, get street cred</h2>
-            <p>Se tiveres feito fork a um repositório, podes a qualquer momento submeter as tuas alterações para serem integradas no upstream</p>
         </section>
         <section>
             <h2>Github has a few treasures</h2>
@@ -439,7 +441,7 @@ Automatic merge failed; fix conflicts and then commit the result.
             <pre class="fragment bash"><code data-trim >git push -f</code></pre>
         </section>
         <section>
-            <h2>Git workflows</h2>
+            <h2>Other git workflows</h2>
         </section>
         <section>
             <h2>A centralized repository</h2>
@@ -476,38 +478,6 @@ Automatic merge failed; fix conflicts and then commit the result.
         <section>
             <h2>Gitflow</h2>
             <img src="imgs/gitflow.png"/>
-        </section>
-        <section>
-            <h2>Pull Request</h2>
-            <p>É um dos métodos mais comuns no github</p>
-            <p>Cada utilizador tem um repositório remoto</p>
-            <p>O desenvolvimento é feito para esse repositório</p>
-            <p>Assim que tiverem o seu trabalho completo criam um pull request</p>
-        </section>
-        <section>
-            <h2>Pull Request</h2>
-            <img src="imgs/pullrequest.png">
-        </section>
-        <section>
-            <h2>All your bases are belong to us</h2>
-            <p>Lets use another repo, that has already a few commits</p>
-            <pre class="fragment bash"><code data-trim >git clone git@github.com:{your github username]/gitWSPart2.git </code></pre>
-            <div class="fragment"><pre class="bash"><code data-trim >git log --graph --oneline --all</code></pre>
-                <p> ou</p>
-            <pre class="fragment bash"><code data-trim >gitk --all </code></pre>
-            </div>
-        </section>
-        <section>
-            <h2>This repo is a mess</h2>
-            <p>No not really. This is normal</br>We just have to merge a few branches</p>
-        </section>
-        <section  data-background="#883333">
-            <h2>What about rebase?</h2>
-            <p>NO. The code is already public.</p>
-            </section>
-            <section>
-            <h2>But what if?</h2>
-            <p>unscripted git hacking</p>
         </section>
         <section>
             <h1>F I M</h1>
